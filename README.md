@@ -34,8 +34,8 @@ A comprehensive Flutter application for parking management with Firebase integra
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/abdoemad23/Android.git
-cd Android
+git clone https://github.com/abdoemad23/parking-management-app.git
+cd parking-management-app
 ```
 
 2. Install dependencies:
@@ -56,7 +56,7 @@ flutter run
 ## Web Deployment
 
 This project is configured for web deployment and can be accessed at:
-[Live Demo](https://abdoemad23.github.io/Android/)
+[Live Demo](https://abdoemad23.github.io/parking-management-app/)
 
 ## Project Structure
 
@@ -87,4 +87,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Your Name - [@your_twitter](https://twitter.com/your_twitter) - email@example.com
 
-Project Link: [https://github.com/abdoemad23/Android](https://github.com/abdoemad23/Android)
+Project Link: [https://github.com/abdoemad23/parking-management-app](https://github.com/abdoemad23/parking-management-app)
