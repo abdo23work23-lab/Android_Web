@@ -126,3 +126,4 @@ Thumbs.db
 
 # Log files
 *.log
+firebase-admin-key.json

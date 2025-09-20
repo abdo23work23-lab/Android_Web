@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'dart:io';
+import 'dart:math' as math;
 import '../models/parking_space.dart';
 import '../models/parking_reservation.dart';
 import '../models/vehicle.dart';
@@ -375,6 +376,3 @@ class FirebaseService {
     }
   }
 }
-
-// Import math for distance calculation
-import 'dart:math' as math;

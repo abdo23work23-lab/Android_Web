@@ -44,9 +44,9 @@ class DefaultFirebaseOptions {
     apiKey: 'AIzaSyCmrJu-rG4n4pCon7XbujpJiF-DrdE2Op8',
     appId: '1:22459400961:web:d4407d352766069eb11100',
     messagingSenderId: '22459400961',
-    projectId: 'parking-7f439',
-    authDomain: 'parking-7f439.firebaseapp.com',
-    storageBucket: 'parking-7f439.appspot.com',
+    projectId: 'parking-913c5',
+    authDomain: 'parking-913c5.firebaseapp.com',
+    storageBucket: 'parking-913c5.appspot.com',
     measurementId: 'G-0THVDE90F8',
   );
 
@@ -54,16 +54,16 @@ class DefaultFirebaseOptions {
     apiKey: 'AIzaSyCmrJu-rG4n4pCon7XbujpJiF-DrdE2Op8',
     appId: '1:22459400961:android:550c14c5aeed1c20b11100',
     messagingSenderId: '22459400961',
-    projectId: 'parking-7f439',
-    storageBucket: 'parking-7f439.appspot.com',
+    projectId: 'parking-913c5',
+    storageBucket: 'parking-913c5.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAZ5m8Urn3cxrf5qp9-poHmWfG0Bdm3ukI',
     appId: '1:22459400961:ios:0d2babd6c1c4eccdb11100',
     messagingSenderId: '22459400961',
-    projectId: 'parking-7f439',
-    storageBucket: 'parking-7f439.appspot.com',
+    projectId: 'parking-913c5',
+    storageBucket: 'parking-913c5.appspot.com',
     androidClientId: '22459400961-cpelfc60heb4ltt21rugn28lg7udv39q.apps.googleusercontent.com',
     iosBundleId: 'com.example.untitled1',
   );
@@ -72,8 +72,8 @@ class DefaultFirebaseOptions {
     apiKey: 'AIzaSyAZ5m8Urn3cxrf5qp9-poHmWfG0Bdm3ukI',
     appId: '1:22459400961:ios:0d2babd6c1c4eccdb11100',
     messagingSenderId: '22459400961',
-    projectId: 'parking-7f439',
-    storageBucket: 'parking-7f439.appspot.com',
+    projectId: 'parking-913c5',
+    storageBucket: 'parking-913c5.appspot.com',
     androidClientId: '22459400961-cpelfc60heb4ltt21rugn28lg7udv39q.apps.googleusercontent.com',
     iosBundleId: 'com.example.untitled1',
   );
@@ -82,9 +82,9 @@ class DefaultFirebaseOptions {
     apiKey: 'AIzaSyCmrJu-rG4n4pCon7XbujpJiF-DrdE2Op8',
     appId: '1:22459400961:web:f36166edc8120479b11100',
     messagingSenderId: '22459400961',
-    projectId: 'parking-7f439',
-    authDomain: 'parking-7f439.firebaseapp.com',
-    storageBucket: 'parking-7f439.appspot.com',
+    projectId: 'parking-913c5',
+    authDomain: 'parking-913c5.firebaseapp.com',
+    storageBucket: 'parking-913c5.appspot.com',
     measurementId: 'G-HYRD7KEQ8R',
   );
 
