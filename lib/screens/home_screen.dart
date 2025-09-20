@@ -10,6 +10,8 @@ import 'package:untitled1/helpers/shared_pref.dart';
 import 'package:untitled1/provider/auth_provider.dart';
 import 'package:untitled1/screens/profile/profile_screen.dart';
 import 'package:untitled1/screens/parking/user_screen.dart';
+import 'package:untitled1/screens/admin/firebase_admin_screen.dart';
+import 'package:untitled1/screens/parking/parking_management_screen.dart';
 import 'package:untitled1/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
@@ -154,6 +156,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   onTap: () {
                     Navigator.pop(context);
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileScreen(isPhone: widget.isPhone,)));
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.local_parking),
+                  title: const Text('Parking Management'),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const ParkingManagementScreen()));
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.admin_panel_settings),
+                  title: const Text('Firebase Admin'),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const FirebaseAdminScreen()));
                   },
                 ),
                 ListTile(
