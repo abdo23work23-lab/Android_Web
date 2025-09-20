@@ -3,8 +3,12 @@ name: Deploy Flutter Web App to GitHub Pages
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+
+# Add permissions for GitHub token
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
@@ -17,14 +21,14 @@ jobs:
     - name: Setup Flutter
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: '3.24.0'
+        flutter-version: '3.24.3'
         channel: 'stable'
         
     - name: Install dependencies
       run: flutter pub get
       
-    - name: Build web app
-      run: flutter build web --release
+    - name: Build web app with correct base href
+      run: flutter build web --release --base-href /Android_Web/
       
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
@@ -32,4 +36,4 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build/web
-        cname: abdoemad23.github.io
+        force_orphan: true
