@@ -1,0 +1,17 @@
+# Commands to Complete GitHub Push
+
+# Option 1: If you have GitHub CLI installed
+gh auth login
+git push -u origin main
+
+# Option 2: Using Personal Access Token (Replace YOUR_TOKEN with actual token)
+git push https://YOUR_TOKEN@github.com/abdo23work23-lab/Android_Web.git main
+
+# Option 3: Set up SSH (if you prefer SSH)
+# Generate SSH key: ssh-keygen -t rsa -b 4096 -C "abdo23work23@gmail.com"
+# Add to GitHub: https://github.com/settings/keys
+# Then: git push -u origin main
+
+# Check if push was successful
+git status
+git log --oneline -3
