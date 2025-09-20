@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import '../services/firebase_service.dart';
-import '../models/parking_space.dart';
-import '../models/parking_reservation.dart';
-import '../models/vehicle.dart';
+import '../../services/firebase_service.dart';
+import '../../services/firebase_initializer.dart';
+import '../../models/parking_space.dart';
+import '../../models/parking_reservation.dart';
+import '../../models/vehicle.dart';
 
 class FirebaseAdminScreen extends StatefulWidget {
   const FirebaseAdminScreen({Key? key}) : super(key: key);
@@ -275,42 +277,24 @@ class _FirebaseAdminScreenState extends State<FirebaseAdminScreen>
   }
 
   Widget _buildAnalyticsTab() {
-    return FutureBuilder<Map<String, dynamic>>(
-      future: FirebaseService.getStatistics(),
-      builder: (context, snapshot) {
-        if (snapshot.hasError) {
-          return Center(child: Text('Error: ${snapshot.error}'));
-        }
-
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: CircularProgressIndicator());
-        }
-
-        final stats = snapshot.data ?? {};
-
-        return Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            children: [
-              _buildStatCard('Total Parking Spaces', '${stats['total_parking_spaces'] ?? 0}', Icons.local_parking),
-              _buildStatCard('Active Reservations', '${stats['active_reservations'] ?? 0}', Icons.book_online),
-              _buildStatCard('Total Vehicles', '${stats['total_vehicles'] ?? 0}', Icons.directions_car),
-              _buildStatCard('Today\'s Reservations', '${stats['today_reservations'] ?? 0}', Icons.today),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () async {
-                  await FirebaseService.initializeDatabase();
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Database initialized with sample data')),
-                  );
-                },
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
-                child: const Text('Initialize Sample Data', style: TextStyle(color: Colors.white)),
-              ),
-            ],
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        children: [
+          const Text('Firebase Analytics Dashboard', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () async {
+              await FirebaseInitializer.initializeDatabase();
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Database initialized with sample data')),
+              );
+            },
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
+            child: const Text('Initialize Sample Data', style: TextStyle(color: Colors.white)),
           ),
-        );
-      },
+        ],
+      ),
     );
   }
 
