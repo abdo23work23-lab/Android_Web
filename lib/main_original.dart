@@ -5,12 +5,14 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:untitled1/helpers/shared_pref.dart';
 import 'package:untitled1/provider/auth_provider.dart';
+import 'package:untitled1/provider/parking_provider.dart';
 import 'package:untitled1/screens/auth/OTP.dart';
 import 'package:untitled1/screens/auth/SignUpPage.dart';
 import 'package:untitled1/screens/home_screen.dart';
 import 'package:untitled1/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
+import 'services/firebase_initializer.dart';
 
 import 'helpers/api_handler.dart';
 import 'screens/auth/login_screen.dart';
@@ -24,6 +26,15 @@ void main() async {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
+    
+    // Initialize Firebase database with sample data
+    bool isFirebaseSetup = await FirebaseInitializer.verifyFirebaseSetup();
+    if (isFirebaseSetup) {
+      await FirebaseInitializer.initializeDatabase();
+      print('✅ Firebase setup completed successfully!');
+    } else {
+      print('⚠️ Firebase setup verification failed');
+    }
   } catch (e) {
     print('Initialization error: $e');
   }
@@ -32,6 +43,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AppProvider()),
+        ChangeNotifierProvider(create: (_) => ParkingProvider()),
       ],
       child: MyApp(),
     ),
